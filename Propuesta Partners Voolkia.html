@@ -1,0 +1,1898 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voolkia · Programa de Partners Estratégicos</title>
+<meta name="description" content="Una alianza estratégica para ampliar lo que le ofrecés a tus clientes. Sumate al Programa de Partners de Voolkia.">
+<link rel="icon" type="image/svg+xml" href="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/6691492e1f9eca40dd37c118_Voolkia.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+<style>
+  :root {
+    --brand: #2A0E04;
+    --brand-deep: #1A0902;
+    --orange: #FF6B1A;
+    --orange-deep: #E55A0E;
+    --orange-soft: #FFE3D1;
+    --cream: #FFF6EE;
+    --bg: #F4F2EE;
+    --card: #FFFFFF;
+    --ink: #1F1814;
+    --muted: #6E6258;
+    --line: #E8E0D2;
+    --line-dark: rgba(255,255,255,.08);
+    --shadow-sm: 0 1px 2px rgba(42,14,4,.04), 0 4px 12px rgba(42,14,4,.06);
+    --shadow-md: 0 8px 24px rgba(42,14,4,.08);
+    --shadow-lg: 0 16px 48px rgba(42,14,4,.14);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--orange); text-decoration: none; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .wrap-sm { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+  /* ─────────────── NAV ─────────────── */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(26,9,2,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transition: all .3s ease;
+  }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  nav.top .logo {
+    height: 26px; width: auto; display: block;
+    filter: brightness(0) invert(1);
+  }
+  nav.top .links { display: flex; gap: 4px; align-items: center; }
+  nav.top .links a {
+    color: rgba(255,255,255,.65); padding: 7px 13px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; transition: all .15s ease;
+  }
+  nav.top .links a:hover { color: #fff; background: rgba(255,255,255,.06); }
+  nav.top .cta {
+    background: var(--orange); color: #fff !important; padding: 8px 16px !important;
+    border-radius: 999px; font-weight: 700 !important;
+  }
+  nav.top .cta:hover { background: var(--orange-deep) !important; }
+  @media (max-width: 760px) {
+    nav.top .links a:not(.cta) { display: none; }
+  }
+
+  /* ─────────────── HERO ─────────────── */
+  .hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 60%, #3a1308 100%);
+    color: #fff;
+    padding: 140px 0 110px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -10%; right: -8%; width: 60%; height: 130%;
+    background: radial-gradient(circle at center, rgba(255,107,26,.25) 0%, rgba(255,107,26,.05) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; left: -5%; bottom: -20%; width: 50%; height: 80%;
+    background: radial-gradient(circle, rgba(255,107,26,.10), transparent 60%);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 2; }
+  .hero .eyebrow {
+    position: relative; isolation: isolate;
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--orange); background: transparent;
+    padding: 8px 16px; border-radius: 999px; border: none;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .hero .eyebrow::before {
+    content: ''; position: absolute;
+    width: 250%; aspect-ratio: 1;
+    top: 50%; left: 50%;
+    background: conic-gradient(transparent 0deg, transparent 250deg, var(--orange) 320deg, #FFB47A 340deg, transparent 360deg);
+    z-index: -2;
+    animation: eyebrow-spin 3.5s linear infinite;
+    transform-origin: center;
+  }
+  .hero .eyebrow::after {
+    content: ''; position: absolute; inset: 1.5px;
+    background: linear-gradient(135deg, rgba(42,14,4,.96), rgba(60,20,8,.96));
+    border-radius: 999px;
+    z-index: -1;
+  }
+  @keyframes eyebrow-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero .eyebrow::before { animation: none; }
+  }
+  .hero h1 {
+    margin: 0 0 22px; font-size: clamp(34px, 5.5vw, 64px); font-weight: 800;
+    line-height: 1.05; letter-spacing: -0.025em; max-width: 900px;
+  }
+  .hero h1 .accent { color: var(--orange); }
+  .hero .sub {
+    margin: 0 0 36px; font-size: clamp(15px, 1.4vw, 19px); color: rgba(255,255,255,.78);
+    max-width: 660px; line-height: 1.55;
+  }
+  .hero .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 38px; }
+  .hero .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+    padding: 9px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,.92);
+  }
+  .hero .pill svg { width: 14px; height: 14px; color: var(--orange); }
+  .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--orange); color: #fff;
+    padding: 14px 28px; border-radius: 999px;
+    font-size: 15px; font-weight: 700;
+    transition: all .15s ease; border: none; cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255,107,26,.30);
+  }
+  .btn-primary:hover { background: var(--orange-deep); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(255,107,26,.40); }
+  .btn-primary svg { width: 16px; height: 16px; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.08); color: #fff;
+    padding: 13px 24px; border-radius: 999px;
+    font-size: 14px; font-weight: 600;
+    border: 1px solid rgba(255,255,255,.18);
+    transition: all .15s ease;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.30); }
+
+  /* ─────────────── STATS STRIP ─────────────── */
+  .stats {
+    background: var(--brand-deep); color: #fff;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding: 56px 0;
+  }
+  .stats .grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .stat { text-align: left; }
+  .stat .n {
+    font-size: clamp(40px, 5vw, 64px); font-weight: 900; line-height: 1;
+    color: var(--orange); letter-spacing: -0.03em;
+  }
+  .stat .label { margin-top: 10px; color: rgba(255,255,255,.7); font-size: 13px; font-weight: 500; line-height: 1.4; }
+  @media (max-width: 760px) {
+    .stats .grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  }
+
+  /* ─────────────── CLIENT LOGOS STRIP ─────────────── */
+  .clients {
+    background: var(--brand-deep); color: rgba(255,255,255,.55);
+    padding: 36px 0 44px; border-top: 1px solid rgba(255,255,255,.06);
+    overflow: hidden;
+  }
+  .clients .eyebrow-line {
+    text-align: center;
+    font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(255,255,255,.50); margin-bottom: 24px;
+  }
+  .clients-marquee {
+    position: relative; overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .clients-track {
+    display: flex; gap: 72px; align-items: center;
+    width: max-content;
+    animation: marquee 60s linear infinite;
+  }
+  .clients-track img {
+    height: 44px; width: auto; max-width: 160px; object-fit: contain;
+    opacity: .55;
+    filter: brightness(0) invert(1);
+    transition: opacity .25s ease, transform .25s ease;
+    flex-shrink: 0;
+  }
+  .clients-track img:hover { opacity: 1; transform: scale(1.08); }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clients-track { animation: none; }
+  }
+
+  /* ─────────────── SECTION GENERIC ─────────────── */
+  section.panel { padding: 100px 0; position: relative; }
+  section.panel.alt { background: var(--cream); }
+  section.panel.dark { background: var(--brand); color: #fff; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 18px;
+  }
+  section.panel h2 {
+    margin: 0 0 18px; font-size: clamp(28px, 3.6vw, 44px); font-weight: 800;
+    line-height: 1.1; letter-spacing: -0.02em; color: var(--brand); max-width: 800px;
+  }
+  section.panel.dark h2 { color: #fff; }
+  section.panel.dark h2 .accent { color: var(--orange); }
+  section.panel h2 .accent { color: var(--orange); }
+  section.panel .lead {
+    margin: 0 0 50px; font-size: 17px; color: var(--muted); max-width: 720px; line-height: 1.6;
+  }
+  section.panel.dark .lead { color: rgba(255,255,255,.75); }
+
+  /* ─────────────── PROGRAMA — CARDS PORTAFOLIO ─────────────── */
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px;
+  }
+  .pf-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px; transition: all .2s ease;
+  }
+  .pf-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--orange-soft); }
+  .pf-card .icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--orange-soft); color: var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .pf-card .icon svg { width: 22px; height: 22px; }
+  .pf-card h4 { margin: 0 0 6px; font-size: 14px; font-weight: 700; color: var(--brand); }
+  .pf-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 760px) { .portfolio-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+  /* ─────────────── SUB-EYEBROW (sub-titulares dentro de sección) ─────────────── */
+  .sub-eyebrow {
+    margin: 56px 0 18px;
+    font-size: 13px; font-weight: 700;
+    color: var(--brand); letter-spacing: -0.005em;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sub-eyebrow::before {
+    content: ''; width: 28px; height: 2px;
+    background: var(--orange); border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ─────────────── IDEAL PARTNER PROFILE ─────────────── */
+  .ipp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+  .ipp-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 26px; display: flex; gap: 18px; align-items: flex-start;
+    transition: all .2s ease;
+  }
+  .ipp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--orange-soft); }
+  .ipp-card .icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--orange-soft); color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .ipp-card .icon svg { width: 24px; height: 24px; }
+  .ipp-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; color: var(--brand); }
+  .ipp-card p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+  @media (max-width: 760px) { .ipp-grid { grid-template-columns: 1fr; } }
+
+  /* ─────────────── PAYOFF "RESGUARDA LA CUENTA" ─────────────── */
+  .opo-payoff {
+    margin-top: 22px;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--orange-soft) 100%);
+    border: 1px solid var(--orange-soft);
+    border-radius: 18px;
+    padding: 22px 26px;
+    display: flex; align-items: flex-start; gap: 18px;
+  }
+  .opo-payoff-icon {
+    flex-shrink: 0;
+    width: 46px; height: 46px; border-radius: 12px;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(255,107,26,.25);
+  }
+  .opo-payoff-icon svg { width: 22px; height: 22px; }
+  @media (max-width: 520px) {
+    .opo-payoff { flex-direction: column; gap: 14px; padding: 20px; }
+  }
+
+  /* ─────────────── SERVICE CHIPS ─────────────── */
+  .service-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+  .service-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card); border: 1px solid var(--line);
+    padding: 10px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; color: var(--brand);
+    transition: all .15s ease;
+  }
+  .service-chip:hover { border-color: var(--orange); background: var(--orange-soft); color: var(--orange-deep); }
+  .service-chip svg { width: 14px; height: 14px; color: var(--orange); }
+
+  /* ─────────────── QUIÉNES SOMOS ─────────────── */
+  .about-section {
+    background: linear-gradient(180deg, var(--brand-deep) 0%, var(--brand) 100%);
+    color: #fff; padding: 100px 0;
+    position: relative; overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .about-section::before {
+    content: ''; position: absolute;
+    top: -10%; right: -8%; width: 50%; height: 120%;
+    background: radial-gradient(circle, rgba(255,107,26,.18), transparent 60%);
+    pointer-events: none;
+  }
+  .about-section::after {
+    content: ''; position: absolute;
+    left: -5%; bottom: -20%; width: 40%; height: 70%;
+    background: radial-gradient(circle, rgba(255,107,26,.08), transparent 60%);
+    pointer-events: none;
+  }
+  .about-section .wrap { position: relative; z-index: 2; }
+  .about-section .eyebrow { color: var(--orange); }
+  .about-section h2 { color: #fff; max-width: 820px; }
+  .about-section h2 .accent { color: var(--orange); }
+  .about-section .lead { color: rgba(255,255,255,.78); }
+
+  .about-pillars {
+    display: flex; flex-wrap: wrap; gap: 24px 36px;
+    margin: 28px 0 0; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.10);
+  }
+  .about-pillar { display: flex; align-items: center; gap: 10px; }
+  .about-pillar .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0;
+  }
+  .about-pillar span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.85); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px;
+  }
+  .about-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 18px; padding: 28px 30px;
+    transition: all .2s ease;
+  }
+  .about-card:hover { background: rgba(255,255,255,.07); border-color: var(--orange); }
+  .about-card .about-label {
+    font-size: 11px; font-weight: 700; color: var(--orange);
+    letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .about-card p {
+    margin: 0; font-size: 15px; color: rgba(255,255,255,.85); line-height: 1.65; font-weight: 500;
+  }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* ─────────────── CASO DE ÉXITO DESTACADO ─────────────── */
+  .case-feature {
+    margin-top: 36px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+    overflow: hidden; box-shadow: var(--shadow-md);
+    display: grid; grid-template-columns: 1.3fr 1fr;
+  }
+  .cf-left {
+    padding: 40px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .cf-tag {
+    display: inline-block;
+    font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+    font-weight: 700; color: var(--orange-deep);
+    background: var(--orange-soft); padding: 6px 13px; border-radius: 999px;
+    align-self: flex-start; margin-bottom: 18px;
+  }
+  .cf-title {
+    margin: 0 0 16px; font-size: clamp(22px, 2.4vw, 28px); font-weight: 800;
+    color: var(--brand); letter-spacing: -0.015em; line-height: 1.15;
+  }
+  .cf-desc {
+    margin: 0 0 22px; font-size: 14.5px; color: var(--muted); line-height: 1.65;
+  }
+  .cf-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cf-chip {
+    font-size: 12px; font-weight: 600; color: var(--brand);
+    background: var(--cream); border: 1px solid var(--line);
+    padding: 5px 11px; border-radius: 999px;
+  }
+  .cf-right {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; padding: 40px 32px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; gap: 28px;
+    position: relative; overflow: hidden;
+  }
+  .cf-right::before {
+    content: ''; position: absolute; top: -10%; right: -20%; width: 80%; height: 120%;
+    background: radial-gradient(circle, rgba(255,107,26,.22), transparent 60%);
+    pointer-events: none;
+  }
+  .cf-metric { position: relative; z-index: 2; }
+  .cf-metric-v {
+    font-size: clamp(36px, 4.5vw, 56px); font-weight: 900;
+    color: var(--orange); letter-spacing: -0.03em; line-height: 1;
+    text-shadow: 0 0 0 rgba(255,107,26,0);
+    animation: cf-pulse 4s ease-in-out infinite;
+  }
+  @keyframes cf-pulse {
+    0%, 100% { text-shadow: 0 0 0 rgba(255,107,26,0), 0 0 0 rgba(255,107,26,0); }
+    50%      { text-shadow: 0 0 22px rgba(255,107,26,.55), 0 0 50px rgba(255,107,26,.18); }
+  }
+  .cf-bar {
+    margin: 12px auto 10px;
+    width: 100%; max-width: 280px;
+    height: 4px;
+    background: rgba(255,255,255,.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .cf-metric { width: 100%; max-width: 320px; }
+  .cf-bar span {
+    display: block; height: 100%; width: 0;
+    background: linear-gradient(90deg, var(--orange-deep), var(--orange), #FFB47A);
+    border-radius: 4px;
+    transition: width 1.6s cubic-bezier(.18,.85,.27,1) .4s;
+    box-shadow: 0 0 12px rgba(255,107,26,.6);
+  }
+  .cf-metric.in .cf-bar span { width: var(--fill, 0%); }
+  .cf-metric-k {
+    margin-top: 4px; font-size: 12.5px; color: rgba(255,255,255,.75);
+    line-height: 1.45; font-weight: 500;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cf-metric-v { animation: none; }
+    .cf-bar span { transition: none; width: var(--fill, 0%); }
+  }
+  @media (max-width: 820px) {
+    .case-feature { grid-template-columns: 1fr; }
+    .cf-left { padding: 32px 28px; }
+    .cf-right { padding: 32px 28px; }
+  }
+
+  /* ─────────────── CÓMO FUNCIONA — 2 columnas ─────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+  .tc-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 32px;
+  }
+  .tc-card .tag {
+    display: inline-block; font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    font-weight: 700; padding: 5px 11px; border-radius: 999px;
+    background: var(--orange-soft); color: var(--orange-deep);
+    margin-bottom: 18px;
+  }
+  .tc-card h3 { margin: 0 0 12px; font-size: 24px; font-weight: 800; color: var(--brand); letter-spacing: -0.01em; }
+  .tc-card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
+  @media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ─────────────── TABLA DE COMISIONES ─────────────── */
+  .comm-table {
+    background: var(--card); border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-md); border: 1px solid var(--line);
+    margin-top: 28px;
+  }
+  .comm-table .row {
+    display: grid; grid-template-columns: 1.3fr 1.8fr 1.1fr 1.4fr; gap: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .comm-table .row:last-child { border-bottom: none; }
+  .comm-table .row.head {
+    background: var(--brand); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .comm-table .row.head > div { padding: 16px 20px; }
+  .comm-table .row.body > div { padding: 22px 20px; font-size: 14px; }
+  .comm-table .row.body .comp { font-weight: 700; color: var(--brand); }
+  .comm-table .row.body .comp small { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+  .comm-table .row.body .when { color: var(--muted); line-height: 1.5; }
+  .comm-table .row.body .rate { font-size: 22px; font-weight: 800; color: var(--orange); letter-spacing: -0.01em; }
+  .comm-table .row.body .rate small { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 2px; letter-spacing: 0; }
+  .comm-table .row.body .pay { color: var(--ink); line-height: 1.5; }
+  .comm-table .footnote {
+    background: var(--cream); border-top: 1px solid var(--line);
+    padding: 14px 20px; font-size: 12px; color: var(--muted); line-height: 1.5;
+  }
+  .comm-table .footnote strong { color: var(--brand); }
+  @media (max-width: 820px) {
+    .comm-table .row { grid-template-columns: 1fr; }
+    .comm-table .row.head { display: none; }
+    .comm-table .row.body { padding: 8px 0; }
+    .comm-table .row.body > div { padding: 8px 20px; }
+    .comm-table .row.body > div::before {
+      content: attr(data-label); display: block;
+      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+  }
+
+  /* ─────────────── EJEMPLOS CUÁNTO GANÁS ─────────────── */
+  .examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  .ex-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px; position: relative; overflow: hidden;
+    transition: all .2s ease;
+  }
+  .ex-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .ex-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--orange);
+  }
+  .ex-card .tag { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--orange); }
+  .ex-card h4 { margin: 8px 0 22px; font-size: 18px; font-weight: 700; color: var(--brand); }
+  .ex-card .row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 13px;
+  }
+  .ex-card .row:last-of-type { border-bottom: none; }
+  .ex-card .row .k { color: var(--muted); }
+  .ex-card .row .v { font-weight: 700; color: var(--ink); }
+  .ex-card .highlight {
+    margin-top: 16px; background: var(--cream); border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .ex-card .highlight .label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .ex-card .highlight .amount { font-size: 28px; font-weight: 900; color: var(--orange); letter-spacing: -0.02em; margin-top: 2px; }
+  .ex-card .highlight .note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .ex-card .ab {
+    margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line);
+    display: flex; justify-content: space-between; align-items: baseline; font-size: 13px;
+  }
+  .ex-card .ab .k { color: var(--muted); }
+  .ex-card .ab .v { font-weight: 700; color: var(--orange-deep); }
+  @media (max-width: 920px) { .examples { grid-template-columns: 1fr; } }
+
+  .cross-banner {
+    margin-top: 26px; background: linear-gradient(135deg, var(--brand) 0%, #4a1d0a 100%);
+    color: #fff; border-radius: 20px; padding: 28px 32px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .cross-banner .left { max-width: 700px; }
+  .cross-banner .label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--orange); }
+  .cross-banner .text { margin-top: 6px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.85); }
+  .cross-banner .amount { font-size: 38px; font-weight: 900; color: var(--orange); letter-spacing: -0.02em; }
+
+  /* ─────────────── ¿CUÁL TE CONVIENE? ─────────────── */
+  .which-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 26px; }
+  .which-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .which-card .tag { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: .06em; text-transform: uppercase; }
+  .which-card h5 { margin: 6px 0 8px; font-size: 14px; font-weight: 700; color: var(--brand); }
+  .which-card p { margin: 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 820px) { .which-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .which-grid { grid-template-columns: 1fr; } }
+
+  /* ─────────────── CALCULADORA CTA ─────────────── */
+  .calc-cta {
+    margin-top: 18px;
+    background: var(--card);
+    border: 2px dashed var(--orange);
+    border-radius: 20px;
+    padding: 26px 30px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    transition: all .2s ease;
+  }
+  .calc-cta:hover { background: var(--cream); }
+  .calc-cta .left { display: flex; align-items: center; gap: 18px; flex: 1 1 400px; }
+  .calc-cta .icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 18px rgba(255,107,26,.30);
+  }
+  .calc-cta .icon svg { width: 28px; height: 28px; }
+  .calc-cta h4 { margin: 0 0 4px; font-size: 17px; font-weight: 800; color: var(--brand); letter-spacing: -0.01em; }
+  .calc-cta p { margin: 0; font-size: 13px; color: var(--muted); }
+  .calc-cta .go {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange); color: #fff;
+    padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    transition: all .15s ease;
+  }
+  .calc-cta .go:hover { background: var(--orange-deep); transform: translateY(-1px); }
+  .calc-cta .go svg { width: 14px; height: 14px; }
+
+  /* ─────────────── CALC HOW-TO (intro a la calculadora) ─────────────── */
+  .calc-howto {
+    margin-top: 20px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .ch-step {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start;
+    transition: all .15s ease;
+  }
+  .ch-step:hover { border-color: var(--orange-soft); }
+  .ch-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--orange-soft); color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; flex-shrink: 0;
+  }
+  .ch-title { font-size: 14px; font-weight: 700; color: var(--brand); margin-bottom: 4px; letter-spacing: -0.005em; }
+  .ch-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 820px) { .calc-howto { grid-template-columns: 1fr; } }
+
+  /* ─────────────── MINI CALCULADORA INLINE ─────────────── */
+  .mini-calc {
+    margin-top: 22px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px; box-shadow: var(--shadow-md);
+  }
+  .mc-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+  }
+  .mc-title {
+    font-size: 18px; font-weight: 800; color: var(--brand); letter-spacing: -0.01em;
+  }
+  .mc-title small {
+    display: block; font-size: 13px; font-weight: 500; color: var(--muted);
+    margin-top: 4px; letter-spacing: 0;
+  }
+  .mc-currency {
+    display: inline-flex; padding: 3px; background: var(--accent); border-radius: 999px; flex-shrink: 0;
+  }
+  .mc-currency button {
+    background: transparent; border: none; padding: 6px 14px; border-radius: 999px;
+    font: inherit; font-size: 12px; font-weight: 700; color: var(--muted);
+    cursor: pointer; transition: all .15s ease;
+  }
+  .mc-currency button.active { background: var(--orange); color: #fff; }
+
+  .mc-tabs {
+    display: inline-flex; gap: 4px; padding: 4px; background: var(--accent);
+    border-radius: 999px; margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .mc-tabs button {
+    background: transparent; border: none; padding: 8px 16px; border-radius: 999px;
+    font: inherit; font-size: 13px; font-weight: 700; color: var(--muted);
+    cursor: pointer; transition: all .15s ease;
+  }
+  .mc-tabs button:hover:not(.active) { color: var(--orange-deep); }
+  .mc-tabs button.active { background: var(--brand); color: #fff; }
+
+  .mc-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
+  }
+  @media (max-width: 720px) { .mc-grid { grid-template-columns: 1fr; } }
+
+  .mc-field { margin-bottom: 16px; }
+  .mc-field:last-child { margin-bottom: 0; }
+  .mc-field label {
+    display: block; font-size: 12px; font-weight: 700; color: var(--muted);
+    margin-bottom: 6px; letter-spacing: 0.02em; text-transform: uppercase;
+  }
+  .mc-field .input-wrap { position: relative; display: flex; align-items: center; }
+  .mc-field .input-wrap .prefix {
+    position: absolute; left: 14px; font-size: 12px; font-weight: 700;
+    color: var(--muted); pointer-events: none; letter-spacing: 0.04em;
+  }
+  .mc-field input[type="text"], .mc-field input[type="number"] {
+    width: 100%; font: inherit; font-size: 16px; font-weight: 700;
+    padding: 12px 14px 12px 54px;
+    border: 1px solid var(--line); border-radius: 12px;
+    background: #FAF8F4; color: var(--brand);
+    transition: all .15s ease;
+  }
+  .mc-field input:focus {
+    outline: none; border-color: var(--orange); background: #fff;
+    box-shadow: 0 0 0 3px rgba(255,107,26,.15);
+  }
+  .mc-field .hint { font-size: 11.5px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  .mc-spiff-toggle {
+    display: flex !important; align-items: flex-start; gap: 10px;
+    background: var(--cream); border: 1px solid var(--orange-soft);
+    border-radius: 12px; padding: 12px 14px;
+    font-size: 13px; color: var(--brand); cursor: pointer;
+    text-transform: none !important; letter-spacing: 0 !important; font-weight: 500 !important;
+    margin-bottom: 0 !important;
+  }
+  .mc-spiff-toggle input { accent-color: var(--orange); margin-top: 2px; flex-shrink: 0; }
+  .mc-spiff-toggle small { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 400; }
+  .mc-spiff-toggle strong { color: var(--orange-deep); font-weight: 800; }
+
+  .mc-result {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; border-radius: 16px; padding: 26px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden; min-height: 220px;
+  }
+  .mc-result::before {
+    content: ''; position: absolute; top: -30%; right: -20%; width: 80%; height: 160%;
+    background: radial-gradient(circle, rgba(255,107,26,.22), transparent 60%);
+    pointer-events: none;
+  }
+  .mc-result > div { position: relative; z-index: 2; }
+  .mc-result-label {
+    font-size: 11px; font-weight: 700; color: var(--orange);
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .mc-result-big {
+    font-size: clamp(28px, 4vw, 40px); font-weight: 900; color: #fff;
+    letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .mc-result-note { font-size: 12.5px; color: rgba(255,255,255,.70); margin-top: 10px; line-height: 1.5; }
+  .mc-result-split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    padding-top: 16px; margin-top: 18px; border-top: 1px solid rgba(255,255,255,.14);
+  }
+  .mc-result-split .k {
+    font-size: 10px; font-weight: 700; color: rgba(255,255,255,.55);
+    letter-spacing: .12em; text-transform: uppercase;
+  }
+  .mc-result-split .v {
+    font-size: 17px; font-weight: 800; color: #fff;
+    margin-top: 4px; letter-spacing: -0.01em;
+  }
+  .mc-result-split .v.orange { color: var(--orange); }
+  .mc-spiff-bonus {
+    margin-top: 12px; padding: 10px 14px;
+    background: rgba(255,107,26,.16); border: 1px solid rgba(255,107,26,.35);
+    border-radius: 10px;
+    font-size: 12px; color: #fff;
+  }
+  .mc-spiff-bonus strong { color: var(--orange); }
+
+  .mc-foot {
+    margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line);
+    font-size: 11.5px; color: var(--muted); text-align: center;
+    font-style: italic; line-height: 1.5;
+  }
+
+  /* Toggle visibility by mode */
+  #calc.mode-R .mc-t-only, #calc.mode-R .mc-p-only,
+  #calc.mode-T .mc-r-only, #calc.mode-T .mc-p-only,
+  #calc.mode-P .mc-r-only, #calc.mode-P .mc-t-only { display: none !important; }
+  #calc.mode-R .mc-r-only, #calc.mode-T .mc-t-only, #calc.mode-P .mc-p-only { display: block !important; }
+
+  /* ─────────────── REGLAS QUE TE PROTEGEN ─────────────── */
+  .rules-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px;
+  }
+  .rule {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px; transition: all .2s ease;
+  }
+  .rule:hover { border-color: var(--orange-soft); box-shadow: var(--shadow-sm); }
+  .rule .icon {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--orange-soft); color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .rule .icon svg { width: 20px; height: 20px; }
+  .rule h4 { margin: 0 0 8px; font-size: 15px; font-weight: 700; color: var(--brand); }
+  .rule p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+  @media (max-width: 820px) { .rules-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .rules-grid { grid-template-columns: 1fr; } }
+
+  /* ─────────────── DEAL REGISTRATION ─────────────── */
+  .dr-criteria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  .dr-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 28px; position: relative;
+  }
+  .dr-card .num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 15px; margin-bottom: 16px;
+  }
+  .dr-card h4 { margin: 0 0 8px; font-size: 16px; font-weight: 700; color: var(--brand); }
+  .dr-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+  @media (max-width: 820px) { .dr-criteria { grid-template-columns: 1fr; } }
+
+  /* Deal Registration · Timeline visual */
+  .dr-timeline {
+    margin-top: 36px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; border-radius: 20px; padding: 36px 28px 32px;
+    position: relative; overflow: hidden;
+  }
+  .dr-timeline::before {
+    content: ''; position: absolute; top: 30%; left: -10%; width: 60%; height: 50%;
+    background: radial-gradient(circle, rgba(255,107,26,.15), transparent 60%);
+    pointer-events: none;
+  }
+  .dr-timeline-title {
+    position: relative; z-index: 2;
+    font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 24px; text-align: center;
+  }
+  .dr-timeline-track {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 60px 1fr 60px 1fr; gap: 0; align-items: stretch;
+  }
+  .dr-step-card {
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px; padding: 22px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: all .2s ease;
+  }
+  .dr-step-card:hover { background: rgba(255,255,255,.07); border-color: var(--orange); }
+  .dr-step-card .num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px;
+  }
+  .dr-step-card .step-title { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: -0.005em; }
+  .dr-step-card .step-desc { font-size: 12.5px; color: rgba(255,255,255,.7); line-height: 1.5; }
+  .dr-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--orange); font-size: 24px; font-weight: 700;
+  }
+  .dr-arrow svg { width: 28px; height: 14px; }
+  @media (max-width: 820px) {
+    .dr-timeline-track { grid-template-columns: 1fr; gap: 12px; }
+    .dr-arrow { transform: rotate(90deg); padding: 0; height: 24px; }
+  }
+
+  /* ─────────────── SPIFF + EXTRAS ─────────────── */
+  .extras { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 16px; margin-top: 28px; }
+  @media (max-width: 1080px) { .extras { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .extras { grid-template-columns: 1fr; } }
+  .spiff-card {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+    color: #fff; border-radius: 20px; padding: 28px; position: relative; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(255,107,26,.25);
+  }
+  .spiff-card .tag { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,.85); }
+  .spiff-card .big {
+    font-size: 56px; font-weight: 900; line-height: 1; margin: 12px 0 6px; letter-spacing: -0.03em;
+  }
+  .spiff-card .desc { font-size: 14px; color: rgba(255,255,255,.92); line-height: 1.5; margin-bottom: 18px; }
+  .spiff-card .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .spiff-card .meta span {
+    background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.20);
+    padding: 5px 11px; border-radius: 999px;
+    font-size: 11px; font-weight: 600;
+  }
+  .ex-side {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px;
+  }
+  .ex-side .icon {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--orange-soft); color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .ex-side .icon svg { width: 22px; height: 22px; }
+  .ex-side h4 { margin: 0 0 8px; font-size: 16px; font-weight: 700; color: var(--brand); }
+  .ex-side p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* ─────────────── FAQ ─────────────── */
+  .faq-list { margin-top: 30px; max-width: 880px; }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    margin-bottom: 12px; overflow: hidden;
+    transition: all .2s ease;
+  }
+  .faq-item[open] { border-color: var(--orange-soft); box-shadow: var(--shadow-sm); }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    font-weight: 700; color: var(--brand); font-size: 15px; letter-spacing: -0.005em;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; flex-shrink: 0;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--orange-soft); color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; line-height: 1;
+    transition: transform .25s ease;
+  }
+  .faq-item[open] summary::after { content: '−'; transform: rotate(180deg); background: var(--orange); color: #fff; }
+  .faq-item .answer {
+    padding: 0 24px 22px; font-size: 14px; color: var(--muted); line-height: 1.6;
+  }
+  .faq-item .answer strong { color: var(--brand); }
+
+  /* ─────────────── CTA FINAL ─────────────── */
+  .cta-final {
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 50%, #3a1308 100%);
+    color: #fff; padding: 110px 0; position: relative; overflow: hidden;
+  }
+  .cta-final::before {
+    content: ''; position: absolute; top: -30%; right: -10%; width: 60%; height: 160%;
+    background: radial-gradient(circle, rgba(255,107,26,.18), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-final .wrap { position: relative; z-index: 2; text-align: center; }
+  .cta-final h2 {
+    margin: 0 0 18px; font-size: clamp(32px, 4.5vw, 56px); font-weight: 800;
+    letter-spacing: -0.02em; line-height: 1.1; max-width: 800px; margin-left: auto; margin-right: auto;
+  }
+  .cta-final h2 .accent { color: var(--orange); }
+  .cta-final .sub {
+    max-width: 600px; margin: 0 auto 40px; font-size: 17px; color: rgba(255,255,255,.78);
+  }
+  .cta-final .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .cta-final .tagline {
+    margin-top: 50px; font-size: 13px; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+  }
+
+  /* ─────────────── FOOTER ─────────────── */
+  footer {
+    background: var(--brand-deep); color: rgba(255,255,255,.55);
+    padding: 36px 0; font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .logo { height: 22px; filter: brightness(0) invert(1); opacity: .7; }
+  footer a { color: var(--orange); }
+
+  /* ─────────────── FADE-IN ON SCROLL ─────────────── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal.delay-1 { transition-delay: .08s; }
+  .reveal.delay-2 { transition-delay: .16s; }
+  .reveal.delay-3 { transition-delay: .24s; }
+  .reveal.delay-4 { transition-delay: .32s; }
+  .reveal.delay-5 { transition-delay: .40s; }
+  .reveal.delay-6 { transition-delay: .48s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════ NAV ════════════════════════════════════════════════ -->
+<nav class="top">
+  <div class="wrap">
+    <a href="#hero">
+      <img class="logo" src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/6691492e1f9eca40dd37c118_Voolkia.svg" alt="Voolkia">
+    </a>
+    <div class="links">
+      <a href="#oportunidad">Oportunidad</a>
+      <a href="#programa">Programa</a>
+      <a href="#quienes-somos">Nosotros</a>
+      <a href="#casos">Casos</a>
+      <a href="#comisiones">Comisiones</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto" class="cta">Sumate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════ HERO ════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Programa de Partners Estratégicos · LATAM</div>
+    <h1 class="reveal delay-1">Ampliá tu valor agregado<br><span class="accent">con nuestro apoyo.</span></h1>
+    <p class="sub reveal delay-2">Sumate como Partner Estratégico y ampliá tu oferta con servicios tecnológicos sin escalar tu estructura.</p>
+    <div class="pills reveal delay-3">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Staffing IT</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> RPO</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Desarrollo</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> IA</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Ciberseguridad</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cloud</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Automation</span>
+    </div>
+    <div class="cta-row reveal delay-4">
+      <a href="#contacto" class="btn-primary">Sumate al programa
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#programa" class="btn-secondary">Cómo funciona</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ STATS ════════════════════════════════════════════════ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat reveal"><div class="n" data-count="40">40</div><div class="label">años en el mercado,<br>desde 1985</div></div>
+      <div class="stat reveal delay-1"><div class="n" data-count="700" data-prefix="+">+700</div><div class="label">clientes corporativos<br>atendidos</div></div>
+      <div class="stat reveal delay-2"><div class="n" data-count="3">3</div><div class="label">regiones: Argentina ·<br>LATAM · EE.UU.</div></div>
+      <div class="stat reveal delay-3"><div class="n">ISO</div><div class="label">9001 / 27001 — calidad<br>y seguridad certificadas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ CLIENT LOGOS ════════════════════════════════════════════════ -->
+<section class="clients">
+  <div class="eyebrow-line">Empresas que confían en Voolkia</div>
+  <div class="clients-marquee">
+    <div class="clients-track">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184ccaa12c13b8606cebf_Logo%20Telefo%CC%81nica_Global_Solutions%202021.png" alt="Telefónica">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb215fa1fd4172b0f0_Logo%20MercadoLibre.png" alt="Mercado Libre">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cba54504d966f43908_Logo%20Banco%20Galicia%202024.png" alt="Banco Galicia">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cc1ca08b064d565cef_Logo%20Pampa_energia%202024.png" alt="Pampa Energía">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb1892e5300787fdc9_Logo%20Cencosud%202024.png" alt="Cencosud">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb366eac848c878ddc_Logo%20La%20Caja%202024.png" alt="La Caja">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb1fe6e49aeba7196b_Logo%20Arcos%20Dorados%20.png" alt="Arcos Dorados">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cc68bbd612d56da2f8_Logo%20Movistar%202020.png" alt="Movistar">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cbaff493b411fab662_Logo%20Claro%202024.png" alt="Claro">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb0a5885c1cd5a1f19_Logo%20BancoCredicoop.png" alt="Banco Credicoop">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb68bbd612d56da2b1_Logo%20AeropuertosArgentina2000.png" alt="Aeropuertos Argentina 2000">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cbfadf9333d3275fca_Logo%20LaMeridional.png" alt="La Meridional">
+      <!-- Duplicado para loop infinito -->
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184ccaa12c13b8606cebf_Logo%20Telefo%CC%81nica_Global_Solutions%202021.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb215fa1fd4172b0f0_Logo%20MercadoLibre.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cba54504d966f43908_Logo%20Banco%20Galicia%202024.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cc1ca08b064d565cef_Logo%20Pampa_energia%202024.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb1892e5300787fdc9_Logo%20Cencosud%202024.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb366eac848c878ddc_Logo%20La%20Caja%202024.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb1fe6e49aeba7196b_Logo%20Arcos%20Dorados%20.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cc68bbd612d56da2f8_Logo%20Movistar%202020.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cbaff493b411fab662_Logo%20Claro%202024.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb0a5885c1cd5a1f19_Logo%20BancoCredicoop.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cb68bbd612d56da2b1_Logo%20AeropuertosArgentina2000.png" alt="">
+      <img src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/669184cbfadf9333d3275fca_Logo%20LaMeridional.png" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ OPORTUNIDAD ════════════════════════════════════════════════ -->
+<section class="panel" id="oportunidad">
+  <div class="wrap">
+    <div class="eyebrow reveal">La oportunidad</div>
+    <h2 class="reveal delay-1">Sumá soluciones tecnológicas<br>de <span class="accent">calidad</span> a tu propuesta.</h2>
+    <p class="lead reveal delay-2">
+      Capitalizá oportunidades comerciales tecnológicas en tus clientes, con la capacidad técnica, la experiencia y los 40 años de trayectoria de Voolkia detrás tuyo.
+    </p>
+
+    <div class="two-col" style="margin-top: 18px;">
+      <div class="tc-card reveal delay-2">
+        <span class="tag">La demanda</span>
+        <h3>Tu cliente ya invierte<br>en tecnología.</h3>
+        <p>Las empresas medianas y grandes con las que trabajás están ejecutando proyectos de IA, ciberseguridad, cloud, desarrollo y automatización. Es un mercado activo, con presupuesto asignado y con decisores que ya conocés y confían en vos.</p>
+      </div>
+      <div class="tc-card reveal delay-3">
+        <span class="tag">Más valor</span>
+        <h3>Más valor para tu cliente.<br>Más oportunidad para vos.</h3>
+        <p>Acercás soluciones tecnológicas de calidad enterprise a tus clientes, capitalizás cada oportunidad comercial que se discute en sus mesas y consolidás tu rol como su socio estratégico de cuenta.</p>
+      </div>
+    </div>
+
+    <div class="opo-payoff reveal delay-4">
+      <div class="opo-payoff-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <div>
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: var(--brand); letter-spacing: -0.005em; line-height: 1.5;">
+          Una alianza simple, con reglas claras y todo el portafolio de Voolkia detrás, para que cada conversación con tu cliente termine con una respuesta tuya.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ EL PROGRAMA (unificado) ════════════════════════════════════════════════ -->
+<section class="panel alt" id="programa">
+  <div class="wrap">
+    <div class="eyebrow reveal">El programa</div>
+    <h2 class="reveal delay-1">Una alianza estratégica entre<br>tu propuesta y <span class="accent">la nuestra</span>.</h2>
+    <p class="lead reveal delay-2">
+      Nos aliamos con empresas de R&amp;S IT y consultoras boutique con acceso a decisores en un canal comercial productivo.
+    </p>
+    <p class="lead reveal delay-3" style="max-width: 760px;">
+      Con un único Acuerdo Marco, un único Deal Registration y una economía simple, comercializás todo el portafolio de Voolkia y cobrás comisión por cada negocio cerrado.
+    </p>
+
+    <!-- ──── Sub-bloque 1: Para quién está pensado ──── -->
+    <div class="sub-eyebrow reveal delay-3">Para quién está pensado</div>
+    <div class="ipp-grid">
+      <div class="ipp-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h4>Agencias de R&amp;S IT</h4>
+          <p>Con cartera activa en empresas medianas y grandes, búsquedas constantes y necesidad de ampliar oferta más allá del perfil.</p>
+        </div>
+      </div>
+
+      <div class="ipp-card reveal delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div>
+          <h4>Consultoras boutique</h4>
+          <p>Especializadas en transformación, change management, procesos o estrategia, con confianza ya construida con sus cuentas.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ──── Sub-bloque 2: Portafolio que comercializás ──── -->
+    <div class="sub-eyebrow reveal delay-4">El portafolio que comercializás</div>
+    <div class="service-chips reveal delay-4">
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Staffing IT</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> RPO</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Takeover</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Desarrollo a medida</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Inteligencia Artificial</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Ciberseguridad</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Cloud</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Datos &amp; Analítica</span>
+      <span class="service-chip"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg> Automatización</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ CÓMO FUNCIONA ════════════════════════════════════════════════ -->
+<section class="panel">
+  <div class="wrap">
+    <div class="eyebrow reveal">Cómo funciona</div>
+    <h2 class="reveal delay-1">Dos opciones</h2>
+    <p class="lead reveal delay-2" style="color: var(--orange); font-weight: 600;">¿El partner trabaja la oportunidad, o solo la refiere?</p>
+
+    <div class="two-col">
+      <div class="tc-card reveal">
+        <span class="tag">R · Staffing / RPO</span>
+        <h3>Trabajás la oportunidad</h3>
+        <p>Participás activamente en la búsqueda y selección del perfil: pre-screening, entrevistas iniciales, presentación de la terna. Voolkia contrata y asigna al cliente en modalidad staffing.</p>
+      </div>
+      <div class="tc-card reveal delay-1">
+        <span class="tag">T y P · Takeovers / Proyectos</span>
+        <h3>Solo la referís</h3>
+        <p>Vos aportás la cuenta y el vínculo comercial; Voolkia se encarga de la ejecución de punta a punta. Aplica tanto para la transición de proveedores actuales como para nuevos proyectos de desarrollo y tecnología.</p>
+      </div>
+    </div>
+
+    <div class="reveal delay-3" style="margin-top: 22px; text-align: center; font-size: 13px; color: var(--muted); font-style: italic;">
+      Podés trabajar las dos modalidades en una misma cuenta.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ COMISIONES ════════════════════════════════════════════════ -->
+<section class="panel alt" id="comisiones">
+  <div class="wrap">
+    <div class="eyebrow reveal">Las comisiones</div>
+    <h2 class="reveal delay-1">El componente económico,<br>claro y <span class="accent">sin complicaciones</span>.</h2>
+    <p class="lead reveal delay-2">Tres tasas simples, sin escalas ni asteriscos. La comisión llega cuando llega el negocio.</p>
+
+    <div class="comm-table reveal delay-3">
+      <div class="row head">
+        <div>Componente</div>
+        <div>Cuándo aplica</div>
+        <div>Comisión</div>
+        <div>Pago al partner</div>
+      </div>
+
+      <div class="row body">
+        <div class="comp" data-label="Componente">R · Opción A <small>Staffing (RPO) con búsqueda</small></div>
+        <div class="when" data-label="Cuándo aplica">Aportás el perfil y elegís maximizar el total cobrado.</div>
+        <div class="rate" data-label="Comisión">1,2 × SB <small>sueldo bruto del perfil</small></div>
+        <div class="pay" data-label="Pago">12 cuotas mensuales, contra cobro efectivo.</div>
+      </div>
+
+      <div class="row body">
+        <div class="comp" data-label="Componente">R · Opción B <small>Staffing (RPO) con búsqueda</small></div>
+        <div class="when" data-label="Cuándo aplica">Aportás el perfil y preferís liquidez inmediata.</div>
+        <div class="rate" data-label="Comisión">3% <small>sobre facturación anual</small></div>
+        <div class="pay" data-label="Pago">Un pago al primer cobro efectivo.</div>
+      </div>
+
+      <div class="row body">
+        <div class="comp" data-label="Componente">T · Takeover <small>Solo referís</small></div>
+        <div class="when" data-label="Cuándo aplica">El cliente ya tiene proveedor y Voolkia asume la prestación.</div>
+        <div class="rate" data-label="Comisión">3% <small>sobre facturación anual</small></div>
+        <div class="pay" data-label="Pago">Un pago al primer cobro efectivo.</div>
+      </div>
+
+      <div class="row body">
+        <div class="comp" data-label="Componente">P · Proyectos <small>Solo referís</small></div>
+        <div class="when" data-label="Cuándo aplica">Desarrollo, IA, datos, ciberseguridad o cloud con precio definido.</div>
+        <div class="rate" data-label="Comisión">5% <small>sobre cobros efectivos</small></div>
+        <div class="pay" data-label="Pago">Por hito, contra cobro de cada hito.</div>
+      </div>
+
+      <div class="footnote">
+        <strong>Toda comisión se devenga contra el cobro efectivo del cliente</strong>, nunca contra la emisión de la factura. La base de cálculo se limita a 12 meses fijos.
+      </div>
+    </div>
+
+    <h3 class="reveal delay-4" style="margin: 40px 0 8px; font-size: 18px; color: var(--brand); font-weight: 700; letter-spacing: -0.005em;">¿Cuál te conviene?</h3>
+    <p class="reveal delay-4" style="margin: 0 0 18px; font-size: 14px; color: var(--muted);">Guía rápida para elegir según el tipo de oportunidad.</p>
+
+    <div class="which-grid">
+      <div class="which-card reveal delay-4">
+        <div class="tag">R · Opción A</div>
+        <h5>Si querés total mayor</h5>
+        <p>1,2 × SB en 12 cuotas. Más plata acumulada pero diferida.</p>
+      </div>
+      <div class="which-card reveal delay-5">
+        <div class="tag">R · Opción B</div>
+        <h5>Si querés liquidez</h5>
+        <p>3% sobre facturación anual, en un solo pago al primer cobro.</p>
+      </div>
+      <div class="which-card reveal delay-5">
+        <div class="tag">T · Takeover</div>
+        <h5>Si solo referís</h5>
+        <p>3% sobre facturación anual. Voolkia ejecuta todo. Un pago.</p>
+      </div>
+      <div class="which-card reveal delay-6">
+        <div class="tag">P · Proyectos</div>
+        <h5>Si es un proyecto cerrado</h5>
+        <p>5% sobre cobros efectivos, devengado por hito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ CUÁNTO GANÁS ════════════════════════════════════════════════ -->
+<section class="panel">
+  <div class="wrap">
+    <div class="eyebrow reveal">Cuánto ganás</div>
+    <h2 class="reveal delay-1">Probá tu propio escenario.</h2>
+    <p class="lead reveal delay-2">
+      Estimá la comisión que te corresponde según el componente, tus números reales y la modalidad de pago. Es una herramienta orientativa — el cálculo final se cierra siempre contra el cobro efectivo del cliente y según la carta oferta firmada.
+    </p>
+
+    <div class="calc-howto reveal delay-3">
+      <div class="ch-step">
+        <div class="ch-num">1</div>
+        <div>
+          <div class="ch-title">Elegí el componente</div>
+          <div class="ch-desc">Staffing R si vos trabajás la búsqueda, Takeover T si solo referís un proveedor a reemplazar, Proyecto P para desarrollos cerrados.</div>
+        </div>
+      </div>
+      <div class="ch-step">
+        <div class="ch-num">2</div>
+        <div>
+          <div class="ch-title">Cargá tus números</div>
+          <div class="ch-desc">Sueldo bruto y coeficiente (en R), tarifa mensual al cliente (en T) o valor total (en P). Podés alternar entre ARS y USD.</div>
+        </div>
+      </div>
+      <div class="ch-step">
+        <div class="ch-num">3</div>
+        <div>
+          <div class="ch-title">Mirá el resultado</div>
+          <div class="ch-desc">Te muestra la comisión total, el detalle por cuota o por hito, y un comparativo entre Opción A y B cuando aplica.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-calc reveal delay-4">
+      <div class="mc-header">
+        <div class="mc-title">
+          Calculá tu comisión
+          <small>Probá tu propio escenario según el componente y tus números.</small>
+        </div>
+        <div class="mc-currency">
+          <button data-cur="ARS" class="active">ARS</button>
+          <button data-cur="USD">USD</button>
+        </div>
+      </div>
+
+      <div class="mc-tabs">
+        <button data-mode="R" class="active">Staffing · R</button>
+        <button data-mode="T">Takeover · T</button>
+        <button data-mode="P">Proyecto · P</button>
+      </div>
+
+      <div class="mc-grid mode-R" id="calc">
+        <div class="mc-inputs">
+          <div class="mc-r-only">
+            <div class="mc-field">
+              <label>Sueldo bruto del perfil</label>
+              <div class="input-wrap"><span class="prefix">ARS</span><input type="text" id="calc-sb" value="2.000.000" inputmode="numeric" data-money="1"></div>
+            </div>
+            <div class="mc-field">
+              <label>Coeficiente (× SB → tarifa mensual)</label>
+              <div class="input-wrap"><span class="prefix">×</span><input type="number" id="calc-coef" value="2.2" step="0.1" min="1"></div>
+              <div class="hint">Tarifa al cliente = Sueldo Bruto × Coeficiente. Por defecto usamos 2,2.</div>
+            </div>
+          </div>
+
+          <div class="mc-t-only" style="display:none;">
+            <div class="mc-field">
+              <label>Tarifa mensual al cliente</label>
+              <div class="input-wrap"><span class="prefix">ARS</span><input type="text" id="calc-tarifa" value="3.000.000" inputmode="numeric" data-money="1"></div>
+              <div class="hint">Tarifa que Voolkia factura al cliente final cada mes.</div>
+            </div>
+          </div>
+
+          <div class="mc-p-only" style="display:none;">
+            <div class="mc-field">
+              <label>Valor total del proyecto</label>
+              <div class="input-wrap"><span class="prefix">ARS</span><input type="text" id="calc-proy" value="75.000" inputmode="numeric" data-money="1"></div>
+              <div class="hint">Monto total del proyecto cerrado con el cliente.</div>
+            </div>
+          </div>
+
+          <div class="mc-field" style="margin-top: 8px;">
+            <label class="mc-spiff-toggle">
+              <input type="checkbox" id="calc-spiff">
+              <span>Aplicar Spiff de arranque <strong>+25%</strong> <small>(tope USD 1.500 · primeros 3 deals · 90 días)</small></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="mc-result">
+          <div id="calc-result"></div>
+        </div>
+      </div>
+
+      <div class="mc-foot">
+        Cálculo orientativo. Toda comisión se devenga contra el cobro efectivo del cliente y se rige por la carta oferta firmada.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ REGLAS ════════════════════════════════════════════════ -->
+<section class="panel alt" id="reglas">
+  <div class="wrap">
+    <div class="eyebrow reveal">Reglas que te protegen</div>
+    <h2 class="reveal delay-1">Reglas pensadas para que<br>la <span class="accent">alianza funcione</span>.</h2>
+    <p class="lead reveal delay-2">Pago contra cobro efectivo, sin clawback y ventana de cross-sell de 12 meses. La operación es predecible y limpia.</p>
+
+    <div class="rules-grid">
+      <div class="rule reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h4>Pago contra cobro efectivo</h4>
+        <p>Cobrás cuando Voolkia cobra. El back-to-back protege tu flujo de caja.</p>
+      </div>
+
+      <div class="rule reveal delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Sin clawback</h4>
+        <p>Si el cliente discontinúa antes del año, conservás la comisión ya cobrada. La pérdida la asume Voolkia.</p>
+      </div>
+
+      <div class="rule reveal delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h4>Visibilidad y auditoría</h4>
+        <p>Accedés a la factura emitida al cliente para verificar la base de tu comisión, con derecho de auditoría anual.</p>
+      </div>
+
+      <div class="rule reveal delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <h4>Interés por mora a tu favor</h4>
+        <p>Si Voolkia se atrasa, tu comisión devenga intereses automáticos de pleno derecho.</p>
+      </div>
+
+      <div class="rule reveal delay-4">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <h4>Ventana de cross-sell · 12 meses</h4>
+        <p>Todo servicio nuevo que el cliente contrate en el primer año también te paga comisión.</p>
+      </div>
+
+      <div class="rule reveal delay-5">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h4>Modelo simple y memorable</h4>
+        <p>3% staffing / takeover, 5% proyectos. Se explica al equipo en 5 minutos.</p>
+      </div>
+    </div>
+
+    <p class="reveal delay-6" style="margin: 26px 0 0; text-align: center; font-size: 13px; color: var(--brand); font-weight: 600;">
+      <span style="display: inline-flex; align-items: center; gap: 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Y todo, escrito y firmado en la carta oferta.
+      </span>
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ DEAL REGISTRATION ════════════════════════════════════════════════ -->
+<section class="panel">
+  <div class="wrap">
+    <div class="eyebrow reveal">Deal Registration</div>
+    <h2 class="reveal delay-1">Registrás la cuenta<br>y queda <span class="accent">protegida</span>.</h2>
+    <p class="lead reveal delay-2">Tres criterios objetivos definen si una oportunidad califica para protección de cuenta.</p>
+
+    <div class="dr-criteria">
+      <div class="dr-card reveal">
+        <div class="num">1</div>
+        <h4>Contacto nominal</h4>
+        <p>Persona identificada con nombre, cargo y datos de contacto, con poder de decisión o influencia real sobre la compra.</p>
+      </div>
+      <div class="dr-card reveal delay-1">
+        <div class="num">2</div>
+        <h4>Intro caliente</h4>
+        <p>Presentación efectiva al cliente vía reunión, llamada conjunta o introducción explícita por escrito. No vale el mail frío.</p>
+      </div>
+      <div class="dr-card reveal delay-2">
+        <div class="num">3</div>
+        <h4>Propuesta en 90 días</h4>
+        <p>Voluntad real del cliente de avanzar a una propuesta económica formal de Voolkia dentro de los 90 días.</p>
+      </div>
+    </div>
+
+    <div class="dr-timeline reveal delay-3">
+      <div class="dr-timeline-title">Proceso · de la oportunidad a la cuenta protegida</div>
+      <div class="dr-timeline-track">
+        <div class="dr-step-card">
+          <div class="num">1</div>
+          <div class="step-title">Registrás</div>
+          <div class="step-desc">Cargás la oportunidad en el portal de Voolkia con los datos del contacto y el contexto.</div>
+        </div>
+        <div class="dr-arrow">
+          <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="18 2 24 7 18 12"/></svg>
+        </div>
+        <div class="dr-step-card">
+          <div class="num">2</div>
+          <div class="step-title">Validamos en 48 hs</div>
+          <div class="step-desc">Revisamos contra cuentas ya registradas y confirmamos si la oportunidad califica.</div>
+        </div>
+        <div class="dr-arrow">
+          <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="18 2 24 7 18 12"/></svg>
+        </div>
+        <div class="dr-step-card">
+          <div class="num">3</div>
+          <div class="step-title">Cuenta protegida</div>
+          <div class="step-desc">Quedás como único partner de esa cuenta por 6 meses, prorrogable mientras haya actividad.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ ARRANCÁ CON VENTAJA ════════════════════════════════════════════════ -->
+<section class="panel alt">
+  <div class="wrap">
+    <div class="eyebrow reveal">Arrancá con ventaja</div>
+    <h2 class="reveal delay-1">Un empujón extra<br>en tus primeros negocios.</h2>
+
+    <div class="extras">
+      <div class="spiff-card reveal">
+        <div class="tag">Spiff de arranque</div>
+        <div class="big">+25%</div>
+        <div class="desc">Bono adicional sobre la comisión estándar de tus primeros deals.</div>
+        <div class="meta">
+          <span>Primeros 90 días</span>
+          <span>Primeros 3 deals</span>
+          <span>Tope USD 1.500 c/u</span>
+        </div>
+      </div>
+
+      <div class="ex-side reveal delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <h4>Aceptación simple</h4>
+        <p>Firma electrónica, sin trámites complejos y sin impuesto de sellos. Cerrás el acuerdo en una sola reunión.</p>
+      </div>
+
+      <div class="ex-side reveal delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h4>Materiales</h4>
+        <p>Portafolio, cliente ideal y materiales comerciales listos para que generes pipeline.</p>
+      </div>
+
+      <div class="ex-side reveal delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11l-2 2-2-2"/><path d="M21 13V8"/></svg></div>
+        <h4>Líder de cuenta</h4>
+        <p>Un contacto Voolkia dedicado a tus primeras 3 oportunidades: presenta, ayuda a cerrar y desbloquea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ QUIÉNES SOMOS ════════════════════════════════════════════════ -->
+<section class="about-section" id="quienes-somos">
+  <div class="wrap">
+    <div class="eyebrow reveal">Quiénes somos</div>
+    <h2 class="reveal delay-1">40 años construyendo<br>tecnología con <span class="accent">impacto real</span>.</h2>
+    <p class="lead reveal delay-2">
+      Voolkia es una empresa argentina de servicios tecnológicos fundada en 1985. Trabajamos para corporaciones nacionales e internacionales líderes, con presencia consolidada y crecimiento sostenido en Argentina, LATAM y USA.
+    </p>
+    <p class="lead reveal delay-3" style="max-width: 760px;">
+      Construimos relaciones basadas en la confiabilidad de nuestro trabajo, nuestro compromiso y nuestra conducta ética. Nos involucramos en cada proyecto para impulsar el crecimiento y potenciar los resultados de nuestros clientes.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card reveal delay-3">
+        <div class="about-label">Nuestra Misión</div>
+        <p>Empoderar a nuestros clientes con soluciones tecnológicas sólidas y efectivas que impulsen la productividad, el crecimiento y la toma de decisiones.</p>
+      </div>
+      <div class="about-card reveal delay-4">
+        <div class="about-label">Nuestra Visión</div>
+        <p>Ser una empresa de servicios tecnológicos reconocida en la región por su capacidad para entender el negocio de cada uno de sus clientes, ofrecer soluciones con impacto real y desarrollar vínculos duraderos.</p>
+      </div>
+    </div>
+
+    <div class="about-pillars reveal delay-5">
+      <div class="about-pillar"><span class="dot"></span><span>40 años en el mercado, desde 1985</span></div>
+      <div class="about-pillar"><span class="dot"></span><span>+700 clientes corporativos atendidos</span></div>
+      <div class="about-pillar"><span class="dot"></span><span>Regiones: Argentina · LATAM · EE.UU.</span></div>
+      <div class="about-pillar"><span class="dot"></span><span>ISO 9001 y 27001 certificadas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ CASO DE ÉXITO ════════════════════════════════════════════════ -->
+<section class="panel alt" id="casos">
+  <div class="wrap">
+    <div class="eyebrow reveal">Nuestro último caso de éxito</div>
+    <h2 class="reveal delay-1">Cuando Voolkia entra a una cuenta,<br>esto es lo que <span class="accent">tu cliente recibe</span>.</h2>
+    <p class="lead reveal delay-2">Un ejemplo concreto del impacto que generamos. Cuando referís una oportunidad, esto es lo que llega al otro lado.</p>
+
+    <div class="case-feature reveal delay-3">
+      <div class="cf-left">
+        <div class="cf-tag">Seguros · Compañía líder de la industria</div>
+        <h3 class="cf-title">Predictor de valor de arreglo con IA aplicada</h3>
+        <p class="cf-desc">
+          Diseñamos e implementamos un modelo de Machine Learning para optimizar la gestión de siniestros de una de las principales compañías de seguros del país: predice el valor de reparación antes de la aprobación, normaliza costos y agiliza los procesos internos. El resultado fue una transformación operativa que se sintió en tiempos, presupuestos y experiencia del equipo.
+        </p>
+        <div class="cf-tags">
+          <span class="cf-chip">Machine Learning</span>
+          <span class="cf-chip">IA aplicada</span>
+          <span class="cf-chip">Optimización de procesos</span>
+        </div>
+      </div>
+      <div class="cf-right">
+        <div class="cf-metric" data-fill="95">
+          <div class="cf-metric-v" data-count="95" data-prefix="−" data-suffix="%">−95%</div>
+          <div class="cf-bar"><span></span></div>
+          <div class="cf-metric-k">Reducción en tiempo<br>de aprobación de siniestros</div>
+        </div>
+        <div class="cf-metric" data-fill="15">
+          <div class="cf-metric-v" data-count="15" data-prefix="−" data-suffix="%">−15%</div>
+          <div class="cf-bar"><span></span></div>
+          <div class="cf-metric-k">Ajuste en el presupuesto<br>asignado por caso</div>
+        </div>
+        <div class="cf-metric" data-fill="50">
+          <div class="cf-metric-v" data-count="50" data-prefix="−" data-suffix="%">−50%</div>
+          <div class="cf-bar"><span></span></div>
+          <div class="cf-metric-k">Menor experiencia técnica<br>requerida en el equipo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ FAQ ════════════════════════════════════════════════ -->
+<section class="panel" id="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">Preguntas frecuentes</div>
+    <h2 class="reveal delay-1">Lo que todo partner<br><span class="accent">se pregunta antes de firmar</span>.</h2>
+    <p class="lead reveal delay-2">Si tu pregunta no está acá, escribinos a partners@voolkia.com y la respondemos en menos de 48 hs.</p>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>¿Cuánto demora cerrar el acuerdo y arrancar?</summary>
+        <div class="answer">El acuerdo se cierra en <strong>una sola reunión</strong>. La aceptación es por firma electrónica, sin impuesto de sellos. A los 7 días tenés materiales comerciales, perfil de cliente ideal y un líder de cuenta asignado. Tu primer Deal Registration podés registrarlo el mismo día de la firma.</div>
+      </details>
+
+      <details class="faq-item reveal delay-1">
+        <summary>¿Qué pasa si dos partners registran el mismo cliente?</summary>
+        <div class="answer">La protección es <strong>por orden de registro válido</strong>: el primero que cumple los tres criterios (contacto nominal, intro caliente, propuesta en 90 días) queda protegido por 6 meses prorrogables. Si una oportunidad se desestima formalmente, queda liberada para que otro partner la trabaje.</div>
+      </details>
+
+      <details class="faq-item reveal delay-2">
+        <summary>¿Hay objetivos mínimos o cuota?</summary>
+        <div class="answer"><strong>No hay cuota.</strong> El programa no exige volumen mínimo ni penaliza por no facturar. La única condición operativa es mantener actividad mínima de Deal Registration para que las cuentas registradas no expiren. Trabajás a tu ritmo.</div>
+      </details>
+
+      <details class="faq-item reveal delay-3">
+        <summary>¿Puedo combinar componentes en un mismo cliente?</summary>
+        <div class="answer">Sí, totalmente. Podés referir un proyecto P y al mismo tiempo trabajar una búsqueda R sobre la misma cuenta. La <strong>ventana de cross-sell de 12 meses</strong> te paga comisión por todo servicio adicional que el cliente contrate en ese período.</div>
+      </details>
+
+      <details class="faq-item reveal delay-4">
+        <summary>¿Cómo y cuándo cobro?</summary>
+        <div class="answer">Cobrás <strong>contra factura tuya</strong> emitida a Voolkia, dentro de los 15 días hábiles del mes calendario siguiente al cobro efectivo del cliente. En R-A son 12 cuotas mensuales; en R-B, T y P es un solo pago al primer cobro efectivo (o por hito en proyectos). Si Voolkia se atrasa, tu comisión devenga intereses moratorios automáticos.</div>
+      </details>
+
+      <details class="faq-item reveal delay-5">
+        <summary>¿Qué soporte recibo en mis primeros deals?</summary>
+        <div class="answer">En los primeros 90 días tenés <strong>acompañamiento comercial dedicado</strong>: revisión de oportunidades, materiales custom para tu cuenta, diagnóstico gratuito sin costo para el cliente sobre cada oportunidad registrada, y un Spiff de +25% sobre la comisión estándar de tus primeros 3 deals (tope USD 1.500 c/u).</div>
+      </details>
+
+      <details class="faq-item reveal delay-6">
+        <summary>¿La calidad técnica que entrega Voolkia impacta en mi reputación ante el cliente?</summary>
+        <div class="answer">Voolkia tiene <strong>40 años de trayectoria, certificaciones ISO 9001 y 27001 y más de 700 clientes corporativos atendidos</strong> (Mercado Libre, Banco Galicia, Pampa Energía, La Caja, Arcos Dorados, entre otros). El delivery es nuestra responsabilidad y nos jugamos la marca en cada proyecto. Tu relación queda fortalecida cuando el cliente ve resultados.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ CTA FINAL ════════════════════════════════════════════════ -->
+<section class="cta-final" id="contacto">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="color: var(--orange);">Sumate al programa</div>
+    <h2 class="reveal delay-1"><span class="accent">Ampliá lo que podés ofrecer.</span></h2>
+    <p class="sub reveal delay-2">Un acuerdo simple, reglas claras y el portafolio completo de Voolkia para responder a más necesidades de tus clientes.</p>
+    <div class="cta-row reveal delay-3">
+      <a href="mailto:partners@voolkia.com?subject=Quiero%20sumarme%20al%20Programa%20de%20Partners%20Estrat%C3%A9gicos" class="btn-primary">partners@voolkia.com
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+      <a href="https://voolkia.com" target="_blank" rel="noopener" class="btn-secondary">voolkia.com</a>
+    </div>
+    <div class="tagline reveal delay-4">Ponemos tu proyecto Up &amp; Running · ARG · URU · CL · COL · MEX · USA</div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <img class="logo" src="https://cdn.prod.website-files.com/66901ab278f8ad495a769f62/6691492e1f9eca40dd37c118_Voolkia.svg" alt="Voolkia">
+    <div>© Voolkia · 1985–2026 · <a href="https://voolkia.com" target="_blank" rel="noopener">voolkia.com</a></div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  (function() {
+    const items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
+  })();
+
+  // ─────────── Animated counters (números que se cargan al entrar en viewport) ───────────
+  (function() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const animateNumber = (el) => {
+      const target = parseInt(el.dataset.count, 10);
+      if (!isFinite(target)) return;
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const current = Math.round(target * eased);
+        el.textContent = prefix + current.toLocaleString('es-AR') + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + target.toLocaleString('es-AR') + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(animateNumber);
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateNumber(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => {
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      el.textContent = prefix + '0' + suffix;
+      io.observe(el);
+    });
+  })();
+
+  // ─────────── Predictor: barras animadas (.in en viewport) ───────────
+  (function() {
+    const metrics = document.querySelectorAll('.cf-metric[data-fill]');
+    if (!metrics.length) return;
+    metrics.forEach(m => m.style.setProperty('--fill', m.dataset.fill + '%'));
+    if (!('IntersectionObserver' in window)) {
+      metrics.forEach(m => m.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    metrics.forEach(m => io.observe(m));
+  })();
+
+  // ─────────── Mini-calculadora inline ───────────
+  (function() {
+    const calc = document.getElementById('calc');
+    if (!calc) return;
+
+    const state = { mode: 'R', currency: 'ARS', tc: 1200 };
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+    const parseMoney = v => {
+      const s = String(v || '').replace(/[^\d]/g, '');
+      return s ? parseInt(s, 10) : 0;
+    };
+    const fmt = n => Math.round(n).toLocaleString('es-AR');
+    const cur = () => state.currency;
+
+    function updatePrefixes() {
+      $$('.mc-inputs .prefix').forEach(p => {
+        if (p.textContent.trim() === '×') return;
+        p.textContent = cur();
+      });
+    }
+
+    function calculate() {
+      const spiff = $('#calc-spiff').checked;
+      const spiffCapARS = 1500 * state.tc;
+      const spiffCapUSD = 1500;
+      const cap = state.currency === 'USD' ? spiffCapUSD : spiffCapARS;
+      let main = 0, bonus = 0;
+
+      if (state.mode === 'R') {
+        const sb = parseMoney($('#calc-sb').value);
+        const coef = parseFloat($('#calc-coef').value) || 2.2;
+        const facMes = sb * coef;
+        const facAnual = facMes * 12;
+        const optA = sb * 1.2;
+        const optB = facAnual * 0.03;
+        main = optA;
+        if (spiff) bonus = Math.min(optA * 0.25, cap);
+        return { mode: 'R', sb, coef, facMes, facAnual, optA, optB, main, bonus };
+      }
+      if (state.mode === 'T') {
+        const tarifa = parseMoney($('#calc-tarifa').value);
+        const facAnual = tarifa * 12;
+        const comision = facAnual * 0.03;
+        main = comision;
+        if (spiff) bonus = Math.min(comision * 0.25, cap);
+        return { mode: 'T', tarifa, facAnual, comision, main, bonus };
+      }
+      if (state.mode === 'P') {
+        const proy = parseMoney($('#calc-proy').value);
+        const comision = proy * 0.05;
+        main = comision;
+        if (spiff) bonus = Math.min(comision * 0.25, cap);
+        return { mode: 'P', proy, comision, main, bonus };
+      }
+    }
+
+    function render() {
+      updatePrefixes();
+      const r = calculate();
+      const c = cur();
+      const total = r.main + r.bonus;
+      let html = '';
+
+      const capLocal = state.currency === 'USD' ? 1500 : 1500 * state.tc;
+      const recortado = r.bonus && r.main * 0.25 > capLocal;
+      const recortadoText = recortado ? ' <small>(recortado al tope)</small>' : '';
+
+      let spiffBlock = '';
+      if (r.bonus) {
+        if (r.mode === 'R') {
+          const cuotaBase = r.main / 12;
+          const primerCuota = cuotaBase + r.bonus;
+          spiffBlock = `<div class="mc-spiff-bonus">+ Spiff de arranque: <strong>${c} ${fmt(r.bonus)}</strong>${recortadoText} — se suma a la <strong>primera cuota</strong>.<br><span style="font-size: 11px; opacity: .82; display: block; margin-top: 4px;">1ª cuota: <strong>${c} ${fmt(primerCuota)}</strong> · Cuotas 2 a 12: ${c} ${fmt(cuotaBase)} c/u</span></div>`;
+        } else if (r.mode === 'T') {
+          spiffBlock = `<div class="mc-spiff-bonus">+ Spiff de arranque: <strong>${c} ${fmt(r.bonus)}</strong>${recortadoText} — se suma al pago único.<br><span style="font-size: 11px; opacity: .82; display: block; margin-top: 4px;">Cobrás <strong>${c} ${fmt(total)}</strong> al primer cobro efectivo.</span></div>`;
+        } else {
+          spiffBlock = `<div class="mc-spiff-bonus">+ Spiff de arranque: <strong>${c} ${fmt(r.bonus)}</strong>${recortadoText} — se suma al <strong>primer hito</strong> cobrado.</div>`;
+        }
+      }
+
+      if (r.mode === 'R') {
+        const cuota = r.main / 12;
+        html = `
+          <div>
+            <div class="mc-result-label">Comisión total · Opción A</div>
+            <div class="mc-result-big">${c} ${fmt(r.main)}</div>
+            <div class="mc-result-note">1,2 × Sueldo Bruto en <strong style="color:#fff;">12 cuotas de ${c} ${fmt(cuota)}</strong> contra cobro efectivo.</div>
+            ${spiffBlock}
+            <div class="mc-result-split">
+              <div>
+                <div class="k">Facturación anual</div>
+                <div class="v">${c} ${fmt(r.facAnual)}</div>
+              </div>
+              <div>
+                <div class="k">Opción B · 3% anual</div>
+                <div class="v orange">${c} ${fmt(r.optB)}</div>
+              </div>
+            </div>
+          </div>`;
+      } else if (r.mode === 'T') {
+        html = `
+          <div>
+            <div class="mc-result-label">Comisión al partner</div>
+            <div class="mc-result-big">${c} ${fmt(r.main)}</div>
+            <div class="mc-result-note">3% × <strong style="color:#fff;">${c} ${fmt(r.facAnual)}</strong> (Tarifa mensual × 12). Un pago al primer cobro efectivo.</div>
+            ${spiffBlock}
+            <div class="mc-result-split">
+              <div>
+                <div class="k">Facturación anual</div>
+                <div class="v">${c} ${fmt(r.facAnual)}</div>
+              </div>
+              <div>
+                <div class="k">Tarifa mensual</div>
+                <div class="v orange">${c} ${fmt(r.tarifa)}</div>
+              </div>
+            </div>
+          </div>`;
+      } else {
+        html = `
+          <div>
+            <div class="mc-result-label">Comisión al partner</div>
+            <div class="mc-result-big">${c} ${fmt(r.main)}</div>
+            <div class="mc-result-note">5% × <strong style="color:#fff;">${c} ${fmt(r.proy)}</strong> (Valor total). Devengado por hito, atado al cobro real.</div>
+            ${spiffBlock}
+            <div class="mc-result-split">
+              <div>
+                <div class="k">Valor del proyecto</div>
+                <div class="v">${c} ${fmt(r.proy)}</div>
+              </div>
+              <div>
+                <div class="k">Comisión efectiva</div>
+                <div class="v orange">5,0%</div>
+              </div>
+            </div>
+          </div>`;
+      }
+      $('#calc-result').innerHTML = html;
+    }
+
+    // Wire tabs
+    $$('.mc-tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.mode = btn.dataset.mode;
+        $$('.mc-tabs button').forEach(b => b.classList.toggle('active', b === btn));
+        calc.className = 'mc-grid mode-' + state.mode;
+        render();
+      });
+    });
+    // Wire currency
+    $$('.mc-currency button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.currency = btn.dataset.cur;
+        $$('.mc-currency button').forEach(b => b.classList.toggle('active', b === btn));
+        render();
+      });
+    });
+    // Wire inputs
+    $$('#calc input').forEach(input => {
+      const isMoney = input.dataset.money === '1';
+      input.addEventListener('input', () => {
+        if (isMoney) {
+          const pos = input.selectionStart;
+          const before = input.value.length;
+          const v = parseMoney(input.value);
+          input.value = v ? fmt(v) : '';
+          const after = input.value.length;
+          try { input.setSelectionRange(pos + (after - before), pos + (after - before)); } catch (e) {}
+        }
+        render();
+      });
+      if (isMoney) {
+        input.addEventListener('focus', () => {
+          const v = parseMoney(input.value);
+          input.value = v === 0 ? '' : String(v);
+          input.select();
+        });
+        input.addEventListener('blur', () => {
+          input.value = fmt(parseMoney(input.value));
+          render();
+        });
+      }
+    });
+
+    render();
+  })();
+</script>
+</body>
+</html>
